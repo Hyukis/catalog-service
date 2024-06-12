@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="su.hyuki.catalog.CatalogServiceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-12T00:57:06" hostname="DESKTOP-P14Q3GE" time="0.932">
+  <properties/>
+  <testcase name="contextLoads()" classname="su.hyuki.catalog.CatalogServiceApplicationTests" time="0.932"/>
+  <system-out><![CDATA[09:57:04.284 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [su.hyuki.catalog.CatalogServiceApplicationTests]: CatalogServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:57:04.415 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration su.hyuki.catalog.CatalogServiceApplication for test class su.hyuki.catalog.CatalogServiceApplicationTests
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-06-12T09:57:04.870+09:00  INFO 28084 --- [catalog-service] [    Test worker] s.h.c.CatalogServiceApplicationTests     : Starting CatalogServiceApplicationTests using Java 21.0.3 with PID 28084 (started by User in C:\Users\User\projects\catalog-service)
+2024-06-12T09:57:04.872+09:00  INFO 28084 --- [catalog-service] [    Test worker] s.h.c.CatalogServiceApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-06-12T09:57:06.301+09:00  INFO 28084 --- [catalog-service] [    Test worker] s.h.c.CatalogServiceApplicationTests     : Started CatalogServiceApplicationTests in 1.71 seconds (process running for 2.93)
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\User\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.16\4a451ee6484abac3a498df0f3b33ed00a6fced4d\byte-buddy-agent-1.14.16.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
