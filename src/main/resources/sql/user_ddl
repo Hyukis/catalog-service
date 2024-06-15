@@ -1,0 +1,8 @@
+-- Catalog DB User
+CREATE USER 'hyukis'@'localhost' identified by 'fhald0115@';
+CREATE USER 'hyukis'@'%' identified by 'fhald0115@';
+
+-- Catalog User Guaranteed
+GRANT ALL PRIVILEGES catalog.* to 'hyukis'@'localhost';
+GRANT ALL PRIVILEGES catalog.* to 'hyukis'@'%';
+FLUSH PRIVILEGES;

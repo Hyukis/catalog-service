@@ -1,0 +1,3 @@
+-- Catalog Database
+CREATE TABLE CATALOG;
+
