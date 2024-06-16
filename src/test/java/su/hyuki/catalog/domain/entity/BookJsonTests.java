@@ -22,5 +22,27 @@ class BookJsonTests {
 
     assertThat(jsonContent).extractingJsonPathValue("@.isbn")
         .isEqualTo(book.getIsbn());
+    assertThat(jsonContent).extractingJsonPathValue("@.title")
+        .isEqualTo(book.getTitle());
+    assertThat(jsonContent).extractingJsonPathValue("@.author")
+        .isEqualTo(book.getAuthor());
+    assertThat(jsonContent).extractingJsonPathValue("@.price")
+        .isEqualTo(book.getPrice());
+  }
+
+  @Test
+  void testDeSerialize() throws Exception {
+    var content = """
+        {
+          "isbn": "1234567890",
+          "title": "love story",
+          "author": "hyukis",
+          "price": 9.90
+        }
+        """;
+
+    assertThat(json.parse(content))
+        .usingRecursiveComparison()
+        .isEqualTo(new Book("1234567890", "love story", "hyukis", 9.90));
   }
 }

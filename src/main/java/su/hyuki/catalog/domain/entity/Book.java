@@ -25,7 +25,8 @@ public class Book implements Serializable {
     private String isbn;
 
     @NotBlank( message = "The book title must be defined.")
-    transient private String title;
+    // transient private String title;
+    private String title;
 
     @NotBlank( message = "The book author must be defined.")
     private String author;
