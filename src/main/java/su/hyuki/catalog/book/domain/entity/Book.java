@@ -1,4 +1,4 @@
-package su.hyuki.catalog.domain.entity;
+package su.hyuki.catalog.book.domain.entity;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

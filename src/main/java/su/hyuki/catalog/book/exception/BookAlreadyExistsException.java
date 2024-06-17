@@ -1,4 +1,4 @@
-package su.hyuki.catalog.exception;
+package su.hyuki.catalog.book.exception;
 
 public class BookAlreadyExistsException extends RuntimeException {
 

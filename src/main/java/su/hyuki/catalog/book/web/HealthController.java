@@ -1,4 +1,4 @@
-package su.hyuki.catalog.web;
+package su.hyuki.catalog.book.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

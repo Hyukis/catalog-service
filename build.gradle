@@ -17,6 +17,21 @@ repositories {
     mavenCentral()
 }
 
+/* build.gradle 내부에서 사용되는 설정이다.
+* 여기서는 compileOnly -> annotationProcessor 상속토록 하였다.
+* 인텔리제이 개발 환경에서는 인텔리제이 어노테이션 프로세싱 활성화 기능을 통해 클래스패스에 있는 어노테이션 프로세서를 자동으로 등록할 수 있습니다만,
+* 젠킨스와 같은 빌드 환경에서 그래들로 어노테이션 프로세서를 등록하기 위해서는 이를 위한 구성을 해야합니다.
+* */
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+bootRun {
+    systemProperty 'spring.profiles.active', 'testdata'
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'

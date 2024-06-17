@@ -1,11 +1,11 @@
-package su.hyuki.catalog.web;
+package su.hyuki.catalog.book.web;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import su.hyuki.catalog.domain.BookService;
-import su.hyuki.catalog.domain.entity.Book;
+import su.hyuki.catalog.book.domain.BookService;
+import su.hyuki.catalog.book.domain.entity.Book;
 
 @Slf4j
 @RestController

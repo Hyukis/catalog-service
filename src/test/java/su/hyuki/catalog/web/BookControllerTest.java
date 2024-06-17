@@ -15,9 +15,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import su.hyuki.catalog.domain.BookService;
-import su.hyuki.catalog.domain.entity.Book;
-import su.hyuki.catalog.exception.BookNotFoundException;
+import su.hyuki.catalog.book.domain.BookService;
+import su.hyuki.catalog.book.domain.entity.Book;
+import su.hyuki.catalog.book.exception.BookNotFoundException;
+import su.hyuki.catalog.book.web.BookController;
 
 @WebMvcTest(BookController.class)
 class BookControllerTest {

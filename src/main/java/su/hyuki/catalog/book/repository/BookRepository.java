@@ -1,6 +1,6 @@
-package su.hyuki.catalog.repository;
+package su.hyuki.catalog.book.repository;
 
-import su.hyuki.catalog.domain.entity.Book;
+import su.hyuki.catalog.book.domain.entity.Book;
 
 import java.util.Optional;
 

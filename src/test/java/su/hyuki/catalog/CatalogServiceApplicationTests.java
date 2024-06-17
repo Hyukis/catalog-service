@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import su.hyuki.catalog.domain.entity.Book;
+import su.hyuki.catalog.book.domain.entity.Book;
 
 @SpringBootTest(
     // 완전한 스프링 웹 어플리케이션 콘텍스트와 임의의 포트를 듣는 서블릿 컨테이너를 로드한다.

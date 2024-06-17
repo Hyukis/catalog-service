@@ -1,10 +1,10 @@
-package su.hyuki.catalog.domain;
+package su.hyuki.catalog.book.domain;
 
 import org.springframework.stereotype.Service;
-import su.hyuki.catalog.domain.entity.Book;
-import su.hyuki.catalog.exception.BookAlreadyExistsException;
-import su.hyuki.catalog.exception.BookNotFoundException;
-import su.hyuki.catalog.repository.BookRepository;
+import su.hyuki.catalog.book.exception.BookAlreadyExistsException;
+import su.hyuki.catalog.book.exception.BookNotFoundException;
+import su.hyuki.catalog.book.domain.entity.Book;
+import su.hyuki.catalog.book.repository.BookRepository;
 
 @Service
 public class BookService {

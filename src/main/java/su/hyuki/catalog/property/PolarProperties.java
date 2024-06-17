@@ -1,4 +1,4 @@
-package su.hyuki.property;
+package su.hyuki.catalog.property;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package su.hyuki.catalog.web;
+package su.hyuki.catalog.book.web;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import su.hyuki.catalog.exception.BookAlreadyExistsException;
-import su.hyuki.catalog.exception.BookNotFoundException;
+import su.hyuki.catalog.book.exception.BookAlreadyExistsException;
+import su.hyuki.catalog.book.exception.BookNotFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
