@@ -18,7 +18,7 @@ jobs:
         java-version: 17
         cache: gradle
     - name: Code vulnerability scanning
-      uses: anchore/can-action@v3 # GrypeFMF TKDYDGKDU CNLDIRTJDDMF TMZOSGKSEK.
+      uses: anchore/scan-action@v3 # GrypeFMF TKDYDGKDU CNLDIRTJDDMF TMZOSGKSEK.
       id: scan
       with:
         path: "${{ github.workspace }}" # 체크아웃 저장소 패스
