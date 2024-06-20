@@ -5,10 +5,15 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import java.io.Serializable;
+import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.Version;
 
 @Getter
 @Builder
@@ -16,6 +21,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Book implements Serializable {
 
+    @Id
+    private Long id;
 
     @NotBlank( message = "The book ISBN must be defined." )
     @Pattern(
@@ -35,8 +42,26 @@ public class Book implements Serializable {
     @Positive( message = "The book price must be greater than zero")
     private Double price;
 
+    @Version
+    private int version;
+
+    @CreatedDate
+    Instant createdDate;
+
+    @LastModifiedDate
+    Instant lastModifiedDate;
+
     @Override
     public String toString() {
-        return getClass() + "data { " + isbn + ", " + title + ", " + author + ", " + price + " }";
+        return "Book{" +
+            "id=" + id +
+            ", isbn='" + isbn + '\'' +
+            ", title='" + title + '\'' +
+            ", author='" + author + '\'' +
+            ", price=" + price +
+            ", version=" + version +
+            ", createdDate=" + createdDate +
+            ", lastModifiedDate=" + lastModifiedDate +
+            '}';
     }
 }
