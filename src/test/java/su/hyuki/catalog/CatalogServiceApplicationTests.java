@@ -20,15 +20,14 @@ class CatalogServiceApplicationTests {
   private WebTestClient webTestClient;
 
   @Test
-  void whenPostRequestThenBookCreated() {
-        var expectBook = new Book(null, "1234567890", "love story", "hyukis", 9.90, 0, Instant.now(), Instant.now());
+  void whenGetRequestThenFindBook() {
+        var expectBook = new Book(null, "1234567890", "love story", "hyukis", 9.90, 0, null, null);
 
         webTestClient
-            .post()
+            .get()
             .uri("/books/" +expectBook.getIsbn())
-            .bodyValue(expectBook)
             .exchange()
-            .expectStatus().isCreated()
+            .expectStatus().isOk()
             .expectBody(Book.class).value(
                 actualBook -> {
                   assertThat(actualBook).isNotNull();

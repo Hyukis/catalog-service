@@ -6,7 +6,6 @@ import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
-import java.time.Instant;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -31,7 +30,7 @@ class BookValidationTests {
 
   @Test
   void whenIsbnDefinedButIncorrectThenValidationFails() {
-    var book = new Book(null, "1234567890", "love story", "hyukis", 9.90, 0, null, null);
+    var book = new Book(null, "12345678", "love story", "hyukis", null, 0, null, null);
     Set<ConstraintViolation<Book>> violations = validator.validate(book);
     assertThat(violations).hasSize(2);
   }

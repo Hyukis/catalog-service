@@ -2,7 +2,6 @@ package su.hyuki.catalog.domain.entity;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.time.Instant;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
@@ -35,7 +34,7 @@ class BookJsonTests {
   @Test
   void testDeSerialize() throws Exception {
     var content = """
-        {     
+        { 
           "isbn": "1234567890",
           "title": "love story",
           "author": "hyukis",
