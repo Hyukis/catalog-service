@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.time.Instant;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -41,7 +42,7 @@ class BookControllerTest {
 
   @Test
   void whenSaveBookThenShouldReturnBookEntity() throws Exception {
-    var expectedBook = new Book("1234567890", "Love story", "hyukis", 9.90);
+    var expectedBook = new Book(null, "1234567890", "Love story", "hyukis", 9.90, 0, null, null);
     String isbn = "1234567890";
     String content = new ObjectMapper().writeValueAsString(expectedBook);
 

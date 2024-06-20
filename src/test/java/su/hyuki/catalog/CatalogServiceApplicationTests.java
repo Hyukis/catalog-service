@@ -2,6 +2,7 @@ package su.hyuki.catalog;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.Instant;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +21,7 @@ class CatalogServiceApplicationTests {
 
   @Test
   void whenPostRequestThenBookCreated() {
-        var expectBook = new Book("1234567890", "Catalog-book", "soohyuk", 9.90);
+        var expectBook = new Book(null, "1234567890", "love story", "hyukis", 9.90, 0, Instant.now(), Instant.now());
 
         webTestClient
             .post()

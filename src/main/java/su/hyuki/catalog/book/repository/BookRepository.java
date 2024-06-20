@@ -1,14 +1,19 @@
 package su.hyuki.catalog.book.repository;
 
+import org.springframework.data.jdbc.repository.query.Modifying;
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.transaction.annotation.Transactional;
 import su.hyuki.catalog.book.domain.entity.Book;
 
 import java.util.Optional;
 
-public interface BookRepository {
-
-    Iterable<Book> findAll();
+public interface BookRepository extends CrudRepository<Book, Long> {
     Optional<Book> findByIsbn(String isbn);
     boolean existsByIsbn(String isbn);
-    Book save(Book book);
+
+    @Modifying
+    @Query("DELETE FROM BOOK WHERE isbn = : isbn")
+    @Transactional
     void deleteByIsbn(String isbn);
 }

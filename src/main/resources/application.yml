@@ -10,12 +10,15 @@ server:
 spring:
   application:
     name: catalog-service
+  # 외부를 통해 Config를 받기 위하여
   config:
-    import: "optional:configserver:http://localhost:8888"
+    import: "optional:configserver:"
+#   Profile 설정
   profiles:
     active: testdata
   cloud:
     config:
+      uri: http://localhost:8888
       profile: prod
       request-connect-timeout: 5000
       request-read-timeout: 5000
@@ -25,13 +28,28 @@ spring:
         initial-interval: 1000
         max-interval: 2000
         multiplier: 1.1
-
+  datasource:
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/${POSTGRES_DB}
+    hikari:
+      connection-timeout: 2000 # 풀에서 객체를 연결 하기 위해 기다리는 최대 시간
+      maximum-pool-size: 5
+  sql:
+    init:
+      mode: always
 
 management:
   endpoints:
     web:
       exposure:
         include: refresh, health, bean
+
+
+# log
+logging:
+  level:
+    root: info
 
 polar:
   greeting: Welcome to the local properties book catalog
