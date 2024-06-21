@@ -14,7 +14,7 @@ public class MethodTimerAspect {
 
   @Around("@annotation(su.hyuki.catalog.global.annotation.MethodTimer)")
   public Object logTimer(ProceedingJoinPoint joinPoint) throws Throwable {
-    log.info("{} : Method Start", MethodTimer.class);
+    log.info("{} : Aop Method Timer Annotation Start", MethodTimer.class);
 
     long start = System.currentTimeMillis();
 
