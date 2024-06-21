@@ -18,6 +18,7 @@ spring:
 #    active: testdata
   cloud:
     config:
+      enabled: false
       uri: http://localhost:8888
       profile: prod
       request-connect-timeout: 5000
@@ -41,7 +42,6 @@ management:
     web:
       exposure:
         include: refresh, health, bean
-
 
 # log
 logging:
