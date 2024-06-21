@@ -56,6 +56,9 @@ dependencies {
     //date/time Instant
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
+    // fliway
+    implementation 'org.flywaydb:flyway-core'
+
     runtimeOnly 'org.postgresql:postgresql'
 
     annotationProcessor 'org.projectlombok:lombok'
