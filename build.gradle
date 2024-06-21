@@ -56,8 +56,11 @@ dependencies {
     //date/time Instant
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
-    // fliway
-    implementation 'org.flywaydb:flyway-core'
+    // flyway
+    implementation 'org.flywaydb:flyway-database-postgresql'
+
+    // netty mac m1 os
+    implementation 'io.netty:netty-resolver-dns-native-macos:4.1.68.Final:osx-aarch_64'
 
     runtimeOnly 'org.postgresql:postgresql'
 

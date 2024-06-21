@@ -24,7 +24,7 @@ class CatalogServiceApplicationTests {
   private static Book expectedBook = null;
 
   @BeforeAll
-  public static void getExpectBook() {
+  public static void setUp() {
     expectedBook = new Book(null, "1234567890", "love story", "hyukis", 9.90, 0, null, null);
   }
 
