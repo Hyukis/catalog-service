@@ -25,7 +25,7 @@ class CatalogServiceApplicationTests {
 
   @BeforeAll
   public static void setUp() {
-    expectedBook = new Book(null, "1234567890", "love story", "hyukis", 9.90, 0, null, null);
+    expectedBook = new Book(null, "1234567890", "love story", "hyukis", 9.90, "", 0, null, null);
   }
 
   @Test

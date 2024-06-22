@@ -42,7 +42,7 @@ class BookControllerTest {
 
   @Test
   void whenSaveBookThenShouldReturnBookEntity() throws Exception {
-    var expectedBook = new Book(null, "1234567890", "Love story", "hyukis", 9.90, 0, null, null);
+    var expectedBook = new Book(null, "1234567890", "Love story", "hyukis", 9.90,"", 0, null, null);
     String isbn = "1234567890";
     String content = new ObjectMapper().writeValueAsString(expectedBook);
 

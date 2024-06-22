@@ -43,6 +43,7 @@ public class BookRepositoryJdbcTests {
         .title("love story")
         .author("hyukis")
         .price(12.90)
+        .publisher("")
         .version(0)
         .createdDate(null)
         .lastModifiedDate(null)

@@ -23,8 +23,9 @@ public class BookDataLoader {
   @EventListener(ApplicationReadyEvent.class)
   public void loadBookTestData() {
     bookRepository.deleteAll();
-    var book1 = new Book(null, "1234567890", "love story", "hyukis", 9.90, 0, null,null);
-    var book2 = new Book(null, "1234567891", "Polar Journey", "Iorek Polarson", 12.90, 0, null, null);
+    var book1 = new Book(null, "1234567890", "love story", "hyukis", 9.90, "", 0, null, null);
+    var book2 = new Book(null, "1234567891", "Polar Journey", "Iorek Polarson", 12.90, "", 0, null,
+        null);
 
     log.info("{}", book1);
     log.info("{}", book2);

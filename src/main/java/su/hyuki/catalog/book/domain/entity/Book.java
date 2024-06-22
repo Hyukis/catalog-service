@@ -42,6 +42,8 @@ public class Book implements Serializable {
     @Positive( message = "The book price must be greater than zero")
     private Double price;
 
+    private String publisher;
+
     @Version
     private int version;
 
