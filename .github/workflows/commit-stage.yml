@@ -9,30 +9,27 @@ jobs:
       contents: read
       security-events: write
     steps:
-    - name: Checkout source code
-      uses: actions/checkout@v3 # 현재 깃 저장소 (catalog-service)를 체크아웃한다.
-    - name: Set up JDK
-      uses: actions/setup-java@v3 # 자바 런타임을 설치하고 설정한다.
-      with:
-        distribution: zulu
-        java-version: 21
-        cache: gradle
-    - name: Build, unit tests and integration tests
-      run: |
-        chmod +x gradlew
-        ./gradlew build
-    - name: Code vulnerability scanning
-      uses: anchore/scan-action@v3 # GrypeFMF TKDYDGKDU CNLDIRTJDDMF TMZOSGKSEK.
-      id: scan
-      with:
-        path: "${{ github.workspace }}" # 체크아웃 저장소 패스
-        fail-build: false # 보안 취약성 발견 시 빌드 실패 여부
-        severity-cutoff: high # 오류로 간주할 최소 수준의 보안 유형 (low, medium, high, critical
-        acs-report-enable: true
-    - name: Upload vunerability report
-      uses: github/codeql-action/upload-sarif@v2 # 깃허브로 보안 취약성 리포트 전송 (SARIF 형식)
-      if: success() || failure() # 이전 단계가 실패하더라도 리포트 전송
-      with:
-        sarif_file: ${{steps.scan.outputs.sarif}}
-
-    
+      - name: Checkout source code
+        uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: 21
+          cache: gradle
+      - name: Build, unit tests and integration tests
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+      - name: Code vulnerability scanning
+        uses: anchore/scan-action@v3
+        id: scan
+        with:
+          path: "${{ github.workspace }}"
+          fail-build: false
+          severity-cutoff: high
+      - name: Upload vulnerability report
+        uses: github/codeql-action/upload-sarif@v3
+        if: success() || failure()
+        with:
+          sarif_file: ${{steps.scan.outputs.sarif}}
