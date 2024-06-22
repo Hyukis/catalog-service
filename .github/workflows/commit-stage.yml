@@ -17,6 +17,10 @@ jobs:
         distribution: zulu
         java-version: 21
         cache: gradle
+    - name: Build, unit tests and integration tests
+      run: |
+        chmod +x gradlew
+        ./gradlew build
     - name: Code vulnerability scanning
       uses: anchore/scan-action@v3 # GrypeFMF TKDYDGKDU CNLDIRTJDDMF TMZOSGKSEK.
       id: scan
@@ -30,8 +34,5 @@ jobs:
       if: success() || failure() # 이전 단계가 실패하더라도 리포트 전송
       with:
         sarif_file: ${{steps.scan.outputs.sarif}}
-    - name: Build, unit tests and integration tests
-      run: |
-        chmod +x gradlew
-        ./gradlew build
+
     
