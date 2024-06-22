@@ -22,7 +22,7 @@ spring:
       profile: prod
       request-connect-timeout: 5000
       request-read-timeout: 5000
-      fail-fast: true
+      fail-fast: false
       retry:
         max-attempts: 3
         initial-interval: 1000
